@@ -1,3 +1,8 @@
+import { Component } from "react";
+
+import fetchImagesApi from "services/picsabay";
+import Searchbar from "./Searchbar";
+
 export const App = () => {
   return (
     <div
