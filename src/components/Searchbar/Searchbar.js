@@ -9,7 +9,7 @@ class Searchbar extends Component {
     searchQuery: '',
   };
 
-  handeleSubmit = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     const { searchQuery } = this.state;
@@ -21,24 +21,25 @@ class Searchbar extends Component {
     this.setState({ searchQuery: '' });
   };
 
-  handleImput = (event) => {
-    this.setState({ searchQuery: event.curentTarget.value.toLowerCase() });
+  handleInput = (event) => {
+    this.setState({ searchQuery: event.currentTarget.value.toLowerCase() });
   };
 
   render() {
     return (
-      <header className={styles.Serchbar}>
-        <form className={styles.Form} onSubmit={this.handeleSubmit}>
+      <header className={styles.Searchbar}>
+        <form className={styles.Form} onSubmit={this.handleSubmit}>
           <button type='submit' className={styles.Button}>
-            <BsSearch style={{ width: 20, heigth: 20 }} />
+            <BsSearch style={{ width: 20, height: 20 }} />
           </button>
 
           <input
             className={styles.Input}
             type='text'
             value={this.state.searchQuery}
-            autocomplete='off'
-            autofocus
+            onChange={this.handleInput}
+            autoComplete='off'
+            autoFocus
             placeholder='Search images and photos'
           />
         </form>
