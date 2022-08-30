@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/goReact_03_imageFinder/static/css/main.d54f447e.chunk.css",
+    "main.js": "/goReact_03_imageFinder/static/js/main.c3b84a33.chunk.js",
+    "main.js.map": "/goReact_03_imageFinder/static/js/main.c3b84a33.chunk.js.map",
+    "runtime-main.js": "/goReact_03_imageFinder/static/js/runtime-main.6e8fafd3.js",
+    "runtime-main.js.map": "/goReact_03_imageFinder/static/js/runtime-main.6e8fafd3.js.map",
+    "static/css/2.b28305bc.chunk.css": "/goReact_03_imageFinder/static/css/2.b28305bc.chunk.css",
+    "static/js/2.55272cbf.chunk.js": "/goReact_03_imageFinder/static/js/2.55272cbf.chunk.js",
+    "static/js/2.55272cbf.chunk.js.map": "/goReact_03_imageFinder/static/js/2.55272cbf.chunk.js.map",
+    "index.html": "/goReact_03_imageFinder/index.html",
+    "static/css/2.b28305bc.chunk.css.map": "/goReact_03_imageFinder/static/css/2.b28305bc.chunk.css.map",
+    "static/css/main.d54f447e.chunk.css.map": "/goReact_03_imageFinder/static/css/main.d54f447e.chunk.css.map",
+    "static/js/2.55272cbf.chunk.js.LICENSE.txt": "/goReact_03_imageFinder/static/js/2.55272cbf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e8fafd3.js",
+    "static/css/2.b28305bc.chunk.css",
+    "static/js/2.55272cbf.chunk.js",
+    "static/css/main.d54f447e.chunk.css",
+    "static/js/main.c3b84a33.chunk.js"
+  ]
+}
