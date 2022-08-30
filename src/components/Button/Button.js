@@ -3,7 +3,7 @@ import styles from './Button.module.css';
 const Button = ({ onClickLoadMore }) => {
   return (
     <button
-      tupe='button'
+      type='button'
       className={styles.Button}
       onClick={() => onClickLoadMore()}
     >
