@@ -1,3 +1,5 @@
+# Потрібно вирішита проблемку. Не відобразається розмітка на компоненти(
+
 **Read in other languages: [Русский](README.md), [Polska](README.pl.md).**
 
 # React homework template
