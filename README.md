@@ -1,4 +1,4 @@
-# Розібрати ревю!
+# Розібрати ревю! Внести зміни в код.
 
 **Read in other languages: [Русский](README.md), [Polska](README.pl.md).**
 
