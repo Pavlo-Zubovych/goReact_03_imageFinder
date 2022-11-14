@@ -1,9 +1,10 @@
 import React from 'react';
-import { Component } from "react";
+import { PureComponent } from "react";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// Container і ImageGallery посилаються на один і той же компонент
 import fetchImagesApi from "../services/pixabay.js";
 import Container from "../components/ImageGallery";
 import Searchbar from "../components/Searchbar";
@@ -19,7 +20,9 @@ const Status = {
   REJECTED: "rejected",
 };
 
-class App extends Component {
+// https://stackoverflow.com/questions/41340697/react-component-vs-react-purecomponent
+// https://reactjs.org/docs/react-api.html#reactpurecomponent
+class App extends PureComponent {
   state = {
     searchQuery: "",
     page: 1,
@@ -30,6 +33,8 @@ class App extends Component {
     error: null,
   };
 
+  // компонент не обновляється (після першого рендеру немає оновлення пропсів/стейту) - як наслідок, componentDidUpdate не викликається
+  // перший фетч даних краще робити на componentDidMount (або useEffect з пустим масивом залежностей якщо це не класовий, а функціональний компонент)
   componentDidUpdate(prevProps, prevState) {
     const { searchQuery, page } = this.state;
     const prevSearchQuery = prevState.searchQuery;
@@ -40,6 +45,7 @@ class App extends Component {
 
       fetchImagesApi(searchQuery, page)
         .then((images) => {
+          console.log(images)
           if (images.hits.length === 0) {
             toast.error("Requested images not found!");
             this.resetPage();
@@ -86,17 +92,23 @@ class App extends Component {
     return (
       <Container>
         <Searchbar onSubmit={this.handleFormSubmit} />
-
+  
+        {/*{imagesArray.length && (*/}
         {imagesArray.length >= 1 && (
         <ImageGallery images={imagesArray} onOpenModal={this.toggleModal} />
         )}
 
         {status === "pending" && <LoaderSpinner />}
 
+        {/* https://stackoverflow.com/questions/47882/what-is-a-magic-number-and-why-is-it-bad */}
         {imagesArray.length >= 12 && (
           <Button onClickLoadMore={this.handleLoadMoreBtn} />
         )}
 
+        {/* для змінних, які набувають значень true/false, краще використовувати неймінг, що починається з "is", "has" і т.п.*/}
+        {/* "showModal" => "isModalOpen" */}
+        
+        {/* "onCloseModal" можна назвати просто "onClose", так як це пропс модалки, і тут зрозуміло, що річ про модалку, а не щось інше */}
         {showModal && (
           <Modal onCloseModal={this.toggleModal}>
             <img src={imagesModal.largeImageURL} alt={imagesModal.tags} />
