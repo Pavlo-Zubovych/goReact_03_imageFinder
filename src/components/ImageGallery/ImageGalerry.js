@@ -36,9 +36,9 @@ const ImageGallery = (images, onOpenModal) => {
       {images.map((image) => (
         <ImageGalleryItem
           key={image.id}
-          imagesUrl={image.webformatURL}
-          imagesAlt={image.tags}
-          imageId={image.id}
+          url={image.webformatURL}
+          alt={image.tags}
+          id={image.id}
           onClick={() => {
             onOpenModal(image);
           }}
