@@ -31,7 +31,7 @@ class Searchbar extends Component {
       <header className={styles.Searchbar}>
         <form className={styles.Form} onSubmit={this.handleSubmit}>
           <button type='submit' className={styles.Button}>
-            {/* по можливості стилі краще виносити в css, а не застосовувати інлайн*/}
+            {/* по можливості стилі краще виносити в css, а не застосовувати інлайн +/- */}
             <BsSearch style={{ width: 20, height: 20 }} />
           </button>
 

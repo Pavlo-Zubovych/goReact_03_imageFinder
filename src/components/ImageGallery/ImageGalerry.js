@@ -24,7 +24,7 @@ import styles from './ImageGallery.module.css';
 // +
 
 // 2. ImageGallery краще нічого не знати про те, що є зовні нього. Тобто, він не має знати про модалку, яка знаходиться зовні (в компоненті App), а не всередині (в ImageGallery).
-// Так як "onOpenModal" це дія, яка має виконатися по кліку на зображення, но краще назвати цей пропс "onImageClick" або "onItemClick" - так ти робиш компонент більш універсальним і прибираєш його зв'язанність з іншими компонентами. +
+// Так як "onOpenModal" це дія, яка має виконатися по кліку на зображення, але краще назвати цей пропс "onImageClick" або "onItemClick" - так ти робиш компонент більш універсальним і прибираєш його зв'язанність з іншими компонентами. +
 // Наприклад, якщо тобі треба буде така сама галерея на іншій сторінці, але по кліку на зображення треба буде його видалити, а не відкрити в модалці,
 // ти зможеш використати цей же компонент:
 // <ImageGallery images={imagesArray} onImageClick={this.deleteImage} />
@@ -33,8 +33,8 @@ import styles from './ImageGallery.module.css';
 // https://medium.com/german-gorelkin/low-coupling-high-cohesion-d36369fb1be9 - корисна стаття по темі
 
 const ImageGallery = ({ images, onOpenModal }) => {
-  // https://learn.javascript.ru/object-methods - про this
-  console.log(2, this.images);
+  // https://learn.javascript.ru/object-methods - про this +
+  console.log('imagesArray', images);
   return (
     <ul className={styles.Gallery}>
       {images.map((image) => (
