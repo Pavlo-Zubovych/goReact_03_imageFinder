@@ -24,7 +24,7 @@ const Status = {
 // https://reactjs.org/docs/react-api.html#reactpurecomponent
 class App extends PureComponent {
   state = {
-    searchQuery: "car",
+    searchQuery: "",
     page: 1,
     imagesArray: [],
     isModalOpen: false,
@@ -84,8 +84,8 @@ class App extends PureComponent {
 
   toggleModal = (imagesArray) => {
     this.setState(({ isModalOpen }) => ({
-      isModalOpen: !isModalOpen,
       imagesModal: imagesArray,
+      isModalOpen: !isModalOpen
     }));
   };
 
